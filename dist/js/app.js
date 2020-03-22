@@ -1641,7 +1641,7 @@ __webpack_require__(268);
 window.axios = __webpack_require__(49);
 
 window.axios.defaults.headers.common = {
-    'X-CSRF-TOKEN': window.Laravel.csrfToken,
+    // 'X-CSRF-TOKEN': window.Laravel.csrfToken,
     'X-Requested-With': 'XMLHttpRequest'
 };
 
@@ -1666,7 +1666,7 @@ if (typeof io != "undefined") {
     // ioが定義されていない場合は、実行しない
     window.echo = new __WEBPACK_IMPORTED_MODULE_0_laravel_echo__["a" /* default */]({
         broadcaster: 'socket.io',
-        host: window.location.hostname + ':6001',
+        host: window.location.hostname,
         auth: {
             headers: {
                 'Authorization': 'Bearer ' + localStorage.getItem('default-auth-token')
@@ -23829,6 +23829,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         }
     },
     mounted: function mounted() {
+
+        // Getting Application Config
+        axios.get('/config').then(function (response) {
+            console.log(response.data);
+            window.opnucConfig = response.data;
+        }).catch(function (error) {});
+
         this.$events.$emit('LaravelEcho:init');
     },
 

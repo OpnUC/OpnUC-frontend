@@ -184,6 +184,16 @@
             },
         },
         mounted() {
+
+            // ToDo: アプリケーションの開始前に読み込む必要有り(loading?)
+            // Getting Application Config
+            axios.get('/config')
+                .then(function (response) {
+                    window.opnucConfig = response.data
+                })
+                .catch(function (error) {
+                })
+
             this.$events.$emit('LaravelEcho:init')
         },
         methods: {

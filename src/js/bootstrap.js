@@ -25,7 +25,6 @@ require('admin-lte');
 window.axios = require('axios');
 
 window.axios.defaults.headers.common = {
-    'X-CSRF-TOKEN': window.Laravel.csrfToken,
     'X-Requested-With': 'XMLHttpRequest'
 };
 
@@ -54,7 +53,7 @@ if (typeof(io) != "undefined") {
     // ioが定義されていない場合は、実行しない
     window.echo = new Echo({
         broadcaster: 'socket.io',
-        host: window.location.hostname + ':6001',
+        host: window.location.hostname,
         auth: {
             headers: {
                 'Authorization': 'Bearer ' + localStorage.getItem('default-auth-token')
