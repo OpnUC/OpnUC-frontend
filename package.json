@@ -16,7 +16,7 @@
     "bootstrap-sass": "^3.3.7",
     "browser-sync": "^2.26.7",
     "browser-sync-webpack-plugin": "^2.2.2",
-    "cross-env": "^6.0.3",
+    "cross-env": "^7.0.0",
     "element-ui": "^1.4.13",
     "encoding-japanese": "^1.0.25",
     "es6-promise": "^4.1.0",
