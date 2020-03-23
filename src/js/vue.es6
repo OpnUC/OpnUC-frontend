@@ -4,7 +4,6 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import ElementUI from 'element-ui'
 import locale from 'element-ui/lib/locale/lang/ja'
-import 'element-ui/lib/theme-default/index.css'
 import AppView from './components/App.vue'
 
 import axios from 'axios'
@@ -69,7 +68,10 @@ Vue.use(VueAuth, {
     }
 })
 
-Vue.component('tel-contact', require('./components/common_TelContact.vue'))
+Vue.component(
+    'tel-contact',
+    require('./components/common_TelContact.vue').default
+)
 
 // VueのグローバルMixin
 Vue.mixin({

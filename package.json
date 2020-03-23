@@ -41,5 +41,8 @@
     "vuetable-2": "^1.7.0",
     "webpack": "^4.42.0"
   },
-  "version": "0.0.0"
+  "version": "0.0.0",
+  "dependencies": {
+    "element-theme-chalk": "^2.13.0"
+  }
 }
